@@ -14,3 +14,5 @@ for i,v in getgc(true) do -- GetGc looks throughout entire game for whatever u c
         end
     end
 end
+
+-- This was tested on prison life!
