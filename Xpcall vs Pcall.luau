@@ -5,7 +5,7 @@ local function riskyFunction()
     error("AtTeMpT to index nil with 200") -- here we create a function that is going to PURPOSELY ERROR, this is so we can replicate an error at the fault of the user / script (for example if something in the loadstring breaks) 
 end
 
-local success = xpcall(riskyFunction, function (error) -- First we create the variable "success" to access this xpcall we're going to create. 
+local success = xpcall(riskyFunction, function (error) -- First we create the variable "success" to access this xpcall (expected call) we're going to create. 
     if string.match(string.lower(error), "attempt") then -- we are aware of what error we are looking for "attempt to index" error, which occurs when the script is executed wrongly
         print("sandbox caught error: " .. error .. " do  better bucko!") -- if the error is found, we'll print to the console the following line
     end -- end the if statement
@@ -29,4 +29,4 @@ end -- end the if statement
 
 -- ok so what's the purpose of each one? why use xpcall or pcall? 
 -- for debugging, it's recommeneded to use pcall since it doesn't impact the other functions inside of your script as it independantly handles the error and error information.
--- xpcall is only really useful for purposely spiking errors, it can be used as a detection method or whatever else you please as you can "sandbox" the function u attempt to call.
+-- xpcall is only really useful for purposely spiking errors and responding to them, it can be used as a detection method or whatever else you please as appropriately handle errors being thrown!
