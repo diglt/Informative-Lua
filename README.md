@@ -1,2 +1,3 @@
 # Informative-Lua
-Place to describe lua functions to help people!
+
+This is a repo in which I attempt to detail / explain some topics relating to exploiting functions, either to help me remember or for you to learn something yourself.
