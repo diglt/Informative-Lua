@@ -7,3 +7,8 @@ setmetatable(DontTouchMeNya, { -- setmetatable(OurTable, ReturningTable) setmeta
 }) -- close our metatable, and the setmetatable function itself
 
 print(DontTouchMeNya["You Indexed Me!"]) -- Returns with: "You Failed Lil Bro!""
+
+-- However, this method can be easily bypassed through either one of these methods below:
+
+print(DontTouchMeNya[1]) -- This circumvents the "__index" metamethod as simply check for the 1st instance within the table.
+print(rawget(DontTouchMeNya["You Indexed Me!"]))) -- The "rawget()" function allows us to bypass ANY METAMETHODS when attempting to retrieve a value.
